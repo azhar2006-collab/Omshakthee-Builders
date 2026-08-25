@@ -582,88 +582,60 @@ h5 { font-weight: 800 !important; color: #8B5CF6 !important; }
 }
 
 /* ════════════════════════════════════════
-   PURE CODE ANIMATED CYBER HERO (VIEWPORT-PERFECT HEIGHT)
+   3D NEURAL CORE & ORBITAL SERVICE CONSTELLATION HERO
    ════════════════════════════════════════ */
+
+/* ── Base Hero Container ── */
 .hero-section {
   position: relative;
   width: 100%;
-  height: calc(100vh - var(--nav-h));
-  max-height: calc(100vh - var(--nav-h));
-  min-height: 560px;
-  background: #020718;
+  min-height: calc(100vh - var(--nav-h));
+  background: #030712;
   display: flex;
   align-items: center;
-  justify-content: center;
   overflow: hidden;
-  padding: 0 0 10px;
+  padding: 40px 0 48px;
   box-sizing: border-box;
+  contain: layout paint;
 }
 
-/* Ambient Deep Space Cyber Glows */
-.hero-pure-backdrop {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-  background: radial-gradient(circle at 70% 40%, rgba(31, 79, 178, 0.28) 0%, rgba(7, 22, 79, 0.5) 45%, #020718 100%);
-}
-
-.hero-glow-bubble {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.45;
-  mix-blend-mode: screen;
-  will-change: transform;
-}
-
-.hero-glow-bubble.b1 {
-  width: 500px; height: 500px;
-  top: -10%; left: -5%;
-  background: radial-gradient(circle, #1F4FB2 0%, #07164F 70%, transparent 100%);
-  animation: floatOrbA 16s ease-in-out infinite alternate;
-}
-
-.hero-glow-bubble.b2 {
-  width: 550px; height: 550px;
-  bottom: -15%; right: -5%;
-  background: radial-gradient(circle, #8B5CF6 0%, #38216E 60%, transparent 100%);
-  animation: floatOrbB 20s ease-in-out infinite alternate;
-}
-
-.hero-glow-bubble.b3 {
-  width: 380px; height: 380px;
-  top: 25%; right: 25%;
-  background: radial-gradient(circle, #C026B8 0%, #7A0D78 60%, transparent 100%);
-  animation: floatOrbC 14s ease-in-out infinite alternate;
-}
-
-@keyframes floatOrbA {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(40px, 30px) scale(1.08); }
-}
-@keyframes floatOrbB {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-30px, -40px) scale(1.1); }
-}
-@keyframes floatOrbC {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(25px, -25px) scale(0.95); }
-}
-
-/* Full-Screen Canvas for City Skyline, Highway Light Beams & Particle FX */
-#heroFullCanvas {
+/* ── Neural Synapse Background Canvas ── */
+#heroNeuralCanvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  display: block;
+}
+
+/* ── Cyber Atmospheric Overlays ── */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 72% 50%, rgba(31, 79, 178, 0.28) 0%, rgba(139, 92, 246, 0.14) 38%, rgba(3, 7, 18, 0.95) 75%);
   z-index: 2;
   pointer-events: none;
 }
 
-/* Grid Layout for Left Content & Right Hologram HUD Stage */
-.hero-pure-container {
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 75% 65% at 70% 50%, black 25%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 70% 50%, black 25%, transparent 80%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ── Main Two-Column Layout ── */
+.hero-neural-container {
   position: relative;
   z-index: 10;
   width: 100%;
@@ -671,646 +643,593 @@ h5 { font-weight: 800 !important; color: #8B5CF6 !important; }
   margin: 0 auto;
   padding: 0 36px;
   display: grid;
-  grid-template-columns: 1.05fr 1.15fr;
-  gap: 28px;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 40px;
   align-items: center;
 }
 
-/* ── Hero Left: Exact Typography & CTA ── */
-.hero-pure-left {
+/* ════════════════════════
+   LEFT COLUMN: BRAND & VALUE
+   ════════════════════════ */
+.hero-neural-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 580px;
   z-index: 12;
 }
 
-.hero-pure-title {
-  font-family: 'Exo 2', sans-serif;
-  font-size: clamp(1.75rem, 2.7vw, 2.7rem);
-  font-weight: 900;
-  line-height: 1.18;
-  color: #ffffff;
-  margin-bottom: 14px;
-  letter-spacing: -0.5px;
-}
-
-.hero-brand-line {
-  display: block;
-  color: #ffffff;
-  font-weight: 900;
-  letter-spacing: 0.2px;
-}
-
-.hero-accent-sky {
-  display: block;
+/* Neural Badge Pill */
+.hero-neural-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 16px;
+  border-radius: 30px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.18), inset 0 0 12px rgba(56, 189, 248, 0.1);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
   color: #38bdf8;
-  font-weight: 800;
-  text-shadow: 0 0 20px rgba(56, 189, 248, 0.45);
+  margin-bottom: 22px;
+}
+.hero-neural-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8, 0 0 20px #38bdf8;
+  animation: neuralPulseDot 1.5s ease-in-out infinite;
+}
+@keyframes neuralPulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #38bdf8; }
+  50% { transform: scale(1.6); opacity: 0.6; box-shadow: 0 0 22px #8B5CF6; }
 }
 
-.hero-gradient-text {
+/* Kinetic Title */
+.hero-neural-title {
+  font-family: 'Exo 2', sans-serif;
+  font-size: clamp(2.1rem, 3.4vw, 3.4rem);
+  font-weight: 900;
+  line-height: 1.12;
+  color: #ffffff;
+  margin-bottom: 18px;
+  letter-spacing: -0.6px;
+}
+.hero-neural-title .nline-1 {
   display: block;
-  background: linear-gradient(90deg, #8B5CF6 0%, #C026B8 100%);
+  color: #ffffff;
+}
+.hero-neural-title .nline-2 {
+  display: block;
+  color: #e2e8f0;
+  font-weight: 800;
+}
+.hero-neural-kinetic {
+  display: flex;
+  align-items: center;
+  height: 1.25em;
+  overflow: hidden;
+  margin-top: 4px;
+}
+.hero-neural-prefix {
+  color: #38bdf8;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.hero-neural-word {
+  display: inline-block;
+  background: linear-gradient(90deg, #38bdf8 0%, #a855f7 50%, #ec4899 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   font-weight: 900;
-  filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.4));
+  margin-left: 10px;
+  white-space: nowrap;
+  transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+  filter: drop-shadow(0 0 18px rgba(168, 85, 247, 0.4));
 }
+.hero-neural-word.fade-out { opacity: 0; transform: translateY(-16px); }
+.hero-neural-word.fade-in  { opacity: 1; transform: translateY(0); }
 
-.hero-pure-desc {
+/* Description */
+.hero-neural-desc {
   font-family: 'Nunito Sans', Arial, sans-serif;
-  font-size: 0.94rem;
-  line-height: 1.65;
-  color: #cbd5e1;
-  margin-bottom: 22px;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: #94a3b8;
+  margin-bottom: 28px;
   max-width: 520px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
-.hero-pure-cta-btn {
+/* Dual CTAs */
+.hero-neural-ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+}
+
+.hero-neural-cta-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 13px 32px;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #8B5CF6 0%, #38216E 40%, #1F4FB2 100%);
+  padding: 14px 34px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #1F4FB2 0%, #8B5CF6 55%, #C026B8 100%);
   color: #ffffff !important;
   font-family: 'Exo 2', sans-serif;
-  font-size: 1.02rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.4px;
   text-decoration: none;
-  border: 1px solid rgba(139, 92, 246, 0.5);
-  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.45), 0 0 20px rgba(56, 189, 248, 0.35);
+  border: 1px solid rgba(139, 92, 246, 0.6);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.5), 0 0 24px rgba(56, 189, 248, 0.25);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
-  margin-bottom: 26px;
 }
-
-.hero-pure-cta-btn::before {
+.hero-neural-cta-btn::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #C026B8 0%, #8B5CF6 50%, #38bdf8 100%);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-  z-index: 0;
+  top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: 0.7s ease;
 }
-
-.hero-pure-cta-btn span,
-.hero-pure-cta-btn svg {
-  position: relative;
-  z-index: 1;
-}
-
-.hero-pure-cta-btn:hover {
+.hero-neural-cta-btn:hover::after { left: 150%; }
+.hero-neural-cta-btn:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(192, 38, 184, 0.55), 0 0 30px rgba(56, 189, 248, 0.6);
-  border-color: rgba(56, 189, 248, 0.8);
+  box-shadow: 0 14px 44px rgba(192, 38, 184, 0.55), 0 0 35px rgba(56, 189, 248, 0.6);
+}
+.hero-neural-cta-btn svg {
+  width: 16px; height: 16px;
+  stroke: #ffffff; fill: none; stroke-width: 2.5;
+  transition: transform 0.25s;
+}
+.hero-neural-cta-btn:hover svg { transform: translateX(4px); }
+
+.hero-neural-sec-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #e2e8f0 !important;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+.hero-neural-sec-btn:hover {
+  background: rgba(139, 92, 246, 0.16);
+  border-color: #38bdf8;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(56, 189, 248, 0.25);
+}
+.hero-neural-sec-btn svg {
+  width: 16px; height: 16px;
+  stroke: #38bdf8; fill: none; stroke-width: 2;
 }
 
-.hero-pure-cta-btn:hover::before {
-  opacity: 1;
-}
-
-.hero-pure-cta-btn svg {
-  width: 16px;
-  height: 16px;
-  stroke: #ffffff;
-  fill: none;
-  stroke-width: 2.5;
-  transition: transform 0.25s ease;
-}
-
-.hero-pure-cta-btn:hover svg {
-  transform: translateX(4px);
-}
-
-/* Bottom Progress & Auto-Change Indicators */
-.hero-pure-bottom-bar {
+/* Quantum Telemetry Strip */
+.hero-neural-telemetry {
   display: flex;
   align-items: center;
-  gap: 14px;
-  user-select: none;
+  gap: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
 }
-
-.hero-pure-counter {
+.hero-telem-chip {
   display: flex;
-  align-items: baseline;
-  gap: 5px;
+  flex-direction: column;
+  gap: 2px;
+}
+.hero-telem-val {
   font-family: 'Orbitron', sans-serif;
-}
-
-.hero-pure-current {
-  font-size: 1.28rem;
+  font-size: 1.15rem;
   font-weight: 900;
-  color: #38bdf8;
-  text-shadow: 0 0 12px rgba(56, 189, 248, 0.8);
+  background: linear-gradient(90deg, #38bdf8, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+.hero-telem-lbl {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #64748b;
 }
 
-.hero-pure-total {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.hero-pure-progress-track {
-  width: 75px;
-  height: 4px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.2);
-  overflow: hidden;
-  position: relative;
-}
-
-.hero-pure-progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #38bdf8, #8B5CF6, #C026B8);
-  box-shadow: 0 0 10px rgba(139, 92, 246, 0.9);
-  animation: heroBarCycle 10s linear infinite;
-}
-
-@keyframes heroBarCycle {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-
-.hero-pure-time-label {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-/* ── Hero Right: Interactive 3D Cyber HUD Stage ── */
-.hero-pure-right {
+/* ══════════════════════════════════════════════
+   RIGHT COLUMN: 3D NEURAL CORE & CONSTELLATION
+   ══════════════════════════════════════════════ */
+.hero-neural-stage-wrap {
   position: relative;
   width: 100%;
-  height: min(490px, calc(100vh - var(--nav-h) - 50px));
+  height: 520px;
   display: flex;
   align-items: center;
   justify-content: center;
   perspective: 1200px;
 }
 
-/* Central Holographic Cylinder Light Tower */
-.hero-hologram-cylinder {
+.hero-neural-stage {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.15s ease-out;
+}
+
+/* ── Central 3D Quantum Core Reactor ── */
+.neural-core-center {
   position: absolute;
-  left: 31%;
-  top: 14%;
-  width: 145px;
-  height: 250px;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  cursor: pointer;
+}
+
+/* Glowing Pulsing Core Canvas */
+#neuralCoreCanvas {
+  position: absolute;
+  inset: -30px;
+  width: 200px;
+  height: 200px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.neural-core-inner {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #38bdf8 0%, #1F4FB2 55%, #07164F 100%);
+  box-shadow:
+    0 0 35px rgba(56, 189, 248, 0.8),
+    0 0 70px rgba(139, 92, 246, 0.6),
+    inset 0 0 20px rgba(255, 255, 255, 0.8);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
   z-index: 5;
+  animation: coreBreathing 3s ease-in-out infinite alternate;
+}
+@keyframes coreBreathing {
+  0% { transform: scale(0.95); box-shadow: 0 0 28px rgba(56, 189, 248, 0.7), 0 0 50px rgba(139, 92, 246, 0.5); }
+  100% { transform: scale(1.06); box-shadow: 0 0 45px rgba(56, 189, 248, 0.95), 0 0 85px rgba(192, 38, 184, 0.75); }
 }
 
-.holo-beam-core {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(56, 189, 248, 0.5) 0%, rgba(139, 92, 246, 0.35) 50%, rgba(56, 189, 248, 0.1) 100%);
-  border-radius: 72px / 18px;
-  box-shadow: 0 0 35px rgba(56, 189, 248, 0.6), 0 0 70px rgba(139, 92, 246, 0.4);
-  animation: cylinderPulse 3.5s ease-in-out infinite alternate;
+.neural-core-icon {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+  filter: drop-shadow(0 0 8px #ffffff);
+  animation: coreIconSpin 12s linear infinite;
+}
+@keyframes coreIconSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-@keyframes cylinderPulse {
-  0% { opacity: 0.65; transform: scale(0.96); filter: brightness(1); }
-  100% { opacity: 1; transform: scale(1.04); filter: brightness(1.35); }
-}
-
-.holo-orbit-ring {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%) rotateX(74deg);
-  border-radius: 50%;
-  border: 1.5px dashed #38bdf8;
-  box-shadow: 0 0 15px #38bdf8;
-  pointer-events: none;
-}
-
-.holo-orbit-ring.r-top {
-  top: 10%;
-  width: 175px;
-  height: 65px;
-  animation: spinHoloRing 10s linear infinite;
-}
-
-.holo-orbit-ring.r-mid {
-  top: 45%;
-  width: 195px;
-  height: 75px;
-  border-color: #c084fc;
-  box-shadow: 0 0 18px #8B5CF6;
-  animation: spinHoloRing 8s linear infinite reverse;
-}
-
-.holo-orbit-ring.r-bot {
-  bottom: 4%;
-  width: 215px;
-  height: 80px;
-  border-color: #38bdf8;
-  border-style: solid;
-  border-width: 2px;
-  animation: spinHoloRing 14s linear infinite;
-}
-
-@keyframes spinHoloRing {
-  0% { transform: translateX(-50%) rotateX(74deg) rotate(0deg); }
-  100% { transform: translateX(-50%) rotateX(74deg) rotate(360deg); }
-}
-
-.holo-tower-words {
-  position: relative;
-  z-index: 6;
-  text-align: center;
+.neural-core-tag {
   font-family: 'Rajdhani', sans-serif;
-  font-weight: 800;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-shadow: 0 0 10px #38bdf8, 0 0 20px #8B5CF6;
-  line-height: 1.75;
-  text-transform: uppercase;
-}
-
-.holo-tower-words span {
-  display: block;
-}
-
-/* ── Floating Glassmorphic HUD Cards ── */
-.hud-glass-card {
-  position: absolute;
-  background: rgba(7, 22, 79, 0.72);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(56, 189, 248, 0.35);
-  border-radius: 10px;
-  padding: 11px 14px;
-  box-shadow: 0 14px 35px rgba(2, 7, 24, 0.75), 0 0 18px rgba(139, 92, 246, 0.2);
-  z-index: 8;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  color: #ffffff;
-}
-
-.hud-glass-card:hover {
-  transform: translateY(-5px) scale(1.03) !important;
-  border-color: rgba(56, 189, 248, 0.7);
-  box-shadow: 0 18px 45px rgba(2, 7, 24, 0.9), 0 0 30px rgba(56, 189, 248, 0.4);
-}
-
-.hud-card-title {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-  text-transform: uppercase;
-  color: #94a3b8;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Card 1: SEO Performance (Center Left) */
-.hud-card-seo {
-  left: 2%;
-  top: 10%;
-  width: 155px;
-  animation: cardFloatA 6.5s ease-in-out infinite alternate;
-}
-
-.hud-donut-wrap {
-  position: relative;
-  width: 64px;
-  height: 64px;
-  margin: 4px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hud-donut-wrap svg {
-  transform: rotate(-90deg);
-  width: 100%;
-  height: 100%;
-}
-
-.hud-donut-bg {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.1);
-  stroke-width: 5.5;
-}
-
-.hud-donut-val {
-  fill: none;
-  stroke: #38bdf8;
-  stroke-width: 5.5;
-  stroke-linecap: round;
-  stroke-dasharray: 200;
-  stroke-dashoffset: 16;
-  filter: drop-shadow(0 0 5px #38bdf8);
-  animation: donutFillAnim 3s ease-out forwards;
-}
-
-@keyframes donutFillAnim {
-  0% { stroke-dashoffset: 200; }
-  100% { stroke-dashoffset: 16; }
-}
-
-.hud-donut-text {
-  position: absolute;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.62rem;
   font-weight: 900;
+  letter-spacing: 1.5px;
   color: #ffffff;
   text-shadow: 0 0 8px #38bdf8;
-}
-
-.hud-stat-caption {
-  font-size: 0.68rem;
-  color: #94a3b8;
-  text-align: center;
   margin-top: 2px;
 }
 
-/* Card 2: Social Engagement (Center Left Lower) */
-.hud-card-social {
-  left: 0%;
-  bottom: 8%;
-  width: 175px;
-  animation: cardFloatB 7.5s ease-in-out infinite alternate;
+/* Concentric Quantum Orbital Energy Rings */
+.neural-orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  border: 1px dashed rgba(56, 189, 248, 0.35);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transform-style: preserve-3d;
 }
 
-.hud-social-metrics {
-  display: flex;
-  justify-content: space-between;
-  gap: 5px;
-  margin-top: 6px;
+.neural-orbit-ring.ring-1 {
+  width: 260px;
+  height: 260px;
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.12);
+  animation: orbitRingSpin 24s linear infinite;
 }
 
-.hud-social-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
+.neural-orbit-ring.ring-2 {
+  width: 380px;
+  height: 380px;
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.12);
+  border-style: solid;
+  border-width: 1px;
+  animation: orbitRingSpinRev 32s linear infinite;
 }
 
-.hud-social-icon {
-  width: 14px;
-  height: 14px;
-  stroke: #38bdf8;
-  fill: none;
-  stroke-width: 2;
+.neural-orbit-ring.ring-3 {
+  width: 480px;
+  height: 480px;
+  border-color: rgba(236, 72, 153, 0.22);
+  border-style: dashed;
+  animation: orbitRingSpin 40s linear infinite;
 }
 
-.hud-social-num {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: #ffffff;
+@keyframes orbitRingSpin {
+  0%   { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes orbitRingSpinRev {
+  0%   { transform: translate(-50%, -50%) rotate(360deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
 
-.hud-social-lbl {
-  font-size: 0.62rem;
-  color: #94a3b8;
+/* ── Orbital Service Constellation Satellites ── */
+.constellation-node {
+  position: absolute;
+  z-index: 25;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.3s;
 }
 
-/* Card 3: Performance Overview (Top Right) */
-.hud-card-perf {
-  right: 0%;
-  top: 4%;
-  width: 200px;
-  animation: cardFloatC 8s ease-in-out infinite alternate;
+/* Individual Node Positions around 500px stage */
+.node-seo {
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.node-web {
+  top: 130px;
+  right: -10px;
+}
+.node-social {
+  bottom: 60px;
+  right: 25px;
+}
+.node-ads {
+  bottom: 60px;
+  left: 25px;
+}
+.node-mobile {
+  top: 130px;
+  left: -10px;
 }
 
-.hud-perf-top {
+/* Satellite Glass Card */
+.node-glass-pill {
+  background: rgba(6, 17, 54, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 14px;
+  padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 6px;
+  box-shadow: 0 10px 30px rgba(1, 6, 20, 0.8), 0 0 16px rgba(56, 189, 248, 0.18);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.constellation-node:hover .node-glass-pill,
+.constellation-node.active .node-glass-pill {
+  border-color: #38bdf8;
+  background: rgba(10, 25, 75, 0.95);
+  box-shadow: 0 14px 40px rgba(1, 6, 20, 0.95), 0 0 30px rgba(56, 189, 248, 0.45);
+  transform: scale(1.08);
+}
+.constellation-node.active .node-glass-pill {
+  border-color: #ec4899;
+  box-shadow: 0 14px 40px rgba(1, 6, 20, 0.95), 0 0 35px rgba(236, 72, 153, 0.5);
 }
 
-.hud-mini-donut {
-  width: 38px;
-  height: 38px;
-  position: relative;
+.node-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1rem;
   flex-shrink: 0;
 }
+.node-icon-box.seo    { background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.35); }
+.node-icon-box.web    { background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.35); }
+.node-icon-box.social { background: rgba(236, 72, 153, 0.18); color: #f472b6; border: 1px solid rgba(236, 72, 153, 0.35); }
+.node-icon-box.ads    { background: rgba(251, 191, 36, 0.18); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.35); }
+.node-icon-box.mobile { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }
 
-.hud-mini-donut svg {
-  transform: rotate(-90deg);
-  width: 100%;
-  height: 100%;
-}
-
-.hud-mini-val {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 800;
-  color: #38bdf8;
-  position: absolute;
-}
-
-.hud-perf-spark {
-  width: 100%;
-  height: 34px;
-}
-
-.hud-spark-line {
-  fill: none;
-  stroke: url(#cyanGrad);
-  stroke-width: 2;
-  filter: drop-shadow(0 0 5px #38bdf8);
-  stroke-dasharray: 150;
-  stroke-dashoffset: 150;
-  animation: drawSparkWave 3s ease-in-out infinite alternate;
-}
-
-@keyframes drawSparkWave {
-  0% { stroke-dashoffset: 150; }
-  100% { stroke-dashoffset: 0; }
-}
-
-.hud-perf-foot {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4px;
-  font-size: 0.7rem;
-  color: #94a3b8;
-}
-
-.hud-perf-growth {
-  color: #10b981;
-  font-weight: 700;
-}
-
-/* Card 4: Campaign Analytics (Bottom Right) */
-.hud-card-analytics {
-  right: 2%;
-  bottom: 12%;
-  width: 210px;
-  animation: cardFloatA 7s ease-in-out infinite alternate;
-}
-
-.hud-analytics-body {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 4px;
-}
-
-.hud-equalizer-bars {
-  display: flex;
-  align-items: flex-end;
-  gap: 3.5px;
-  height: 40px;
-  flex: 1;
-}
-
-.hud-eq-stick {
-  flex: 1;
-  background: linear-gradient(to top, #8B5CF6, #C026B8, #38bdf8);
-  border-radius: 2px 2px 0 0;
-  box-shadow: 0 0 6px rgba(139, 92, 246, 0.6);
-  animation: stickJump 1.2s ease-in-out infinite alternate;
-}
-
-.hud-eq-stick:nth-child(1) { height: 40%; animation-delay: 0.1s; }
-.hud-eq-stick:nth-child(2) { height: 80%; animation-delay: 0.3s; }
-.hud-eq-stick:nth-child(3) { height: 60%; animation-delay: 0.15s; }
-.hud-eq-stick:nth-child(4) { height: 95%; animation-delay: 0.4s; }
-.hud-eq-stick:nth-child(5) { height: 70%; animation-delay: 0.25s; }
-.hud-eq-stick:nth-child(6) { height: 50%; animation-delay: 0.5s; }
-
-@keyframes stickJump {
-  0% { transform: scaleY(0.3); }
-  50% { transform: scaleY(1.15); filter: brightness(1.25); }
-  100% { transform: scaleY(0.7); }
-}
-
-.hud-right-donut-col {
+.node-info-col {
   display: flex;
   flex-direction: column;
+}
+.node-title {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+.node-stat-row {
+  display: flex;
   align-items: center;
-  gap: 2px;
+  gap: 6px;
+  margin-top: 2px;
 }
-
-/* Card 5: Data Insight Results Marquee */
-.hud-card-marquee {
-  right: 12%;
-  bottom: 0%;
-  background: rgba(7, 22, 79, 0.85);
-  border: 1px solid rgba(56, 189, 248, 0.5);
-  border-radius: 6px;
-  padding: 6px 14px;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 2px;
+.node-stat-badge {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
   color: #38bdf8;
-  text-shadow: 0 0 10px #38bdf8, 0 0 20px #8B5CF6;
-  box-shadow: 0 8px 24px rgba(7, 22, 79, 0.8);
+}
+.node-stat-lbl {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
-@keyframes cardFloatA {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-12px); }
+/* ── Live Holographic Inspector HUD Dock ── */
+.neural-hud-inspector {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 440px;
+  background: rgba(6, 15, 45, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 14px;
+  padding: 12px 18px;
+  box-shadow: 0 16px 45px rgba(1, 6, 20, 0.95), 0 0 25px rgba(56, 189, 248, 0.2);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  animation: hudDockSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
-@keyframes cardFloatB {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(10px); }
-}
-@keyframes cardFloatC {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-14px); }
+@keyframes hudDockSlide {
+  from { opacity: 0; transform: translate(-50%, 15px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
 }
 
-/* ════════════════════════════════════════
-   RESPONSIVE ADAPTATIONS
-   ════════════════════════════════════════ */
-@media (max-width: 1280px) {
-  .hero-pure-container {
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 0 24px;
+.hud-dock-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hud-beacon-pulse {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: neuralPulseDot 1.4s infinite;
+}
+.hud-dock-name {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+.hud-dock-desc {
+  font-family: 'Nunito Sans', Arial, sans-serif;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 1px;
+}
+.hud-dock-metric {
+  text-align: right;
+  flex-shrink: 0;
+}
+.hud-metric-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #38bdf8;
+  line-height: 1;
+}
+.hud-metric-lbl {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+/* ════════════════════════
+   REDUCED MOTION
+   ════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-neural-dot,
+  .neural-core-inner,
+  .neural-core-icon,
+  .neural-orbit-ring,
+  .hud-beacon-pulse,
+  .hero-neural-word {
+    animation: none !important;
+    transition: none !important;
   }
-  .hero-hologram-cylinder { left: 24%; }
 }
 
+/* ════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ════════════════════════ */
+@media (max-width: 1200px) {
+  .hero-neural-container { grid-template-columns: 1fr 1.15fr; gap: 32px; padding: 0 24px; }
+  .hero-neural-stage { width: 450px; height: 450px; }
+}
 @media (max-width: 992px) {
-  .hero-section {
-    height: auto;
-    max-height: none;
-    min-height: auto;
-    padding: 35px 0 45px;
-  }
-  .hero-pure-container {
-    grid-template-columns: 1fr;
-    gap: 35px;
-    text-align: center;
-  }
-  .hero-pure-left {
-    align-items: center;
-    max-width: 100%;
-  }
-  .hero-pure-desc {
-    max-width: 100%;
-  }
-  .hero-pure-bottom-bar {
-    justify-content: center;
-  }
-  .hero-pure-right {
-    height: 440px;
-  }
+  .hero-section { padding: 44px 0 56px; }
+  .hero-neural-container { grid-template-columns: 1fr; gap: 40px; text-align: center; }
+  .hero-neural-left { align-items: center; }
+  .hero-neural-desc { max-width: 620px; }
+  .hero-neural-ctas { justify-content: center; }
+  .hero-neural-telemetry { justify-content: center; }
+  .hero-neural-kinetic { justify-content: center; }
+  .hero-neural-stage-wrap { height: 460px; }
+  .hero-neural-stage { width: 420px; height: 420px; }
+}
+@media (max-width: 680px) {
+  .hero-section { padding: 32px 0 44px; }
+  .hero-neural-container { padding: 0 16px; }
+  .hero-neural-title { font-size: 2rem; }
+  .hero-neural-ctas { flex-direction: column; width: 100%; gap: 10px; }
+  .hero-neural-cta-btn, .hero-neural-sec-btn { width: 100%; justify-content: center; }
+  .hero-neural-telemetry { gap: 14px; flex-wrap: wrap; justify-content: space-around; }
+  .hero-neural-stage-wrap { height: 420px; }
+  .hero-neural-stage { width: 340px; height: 340px; }
+  .neural-orbit-ring.ring-2 { width: 300px; height: 300px; }
+  .neural-orbit-ring.ring-3 { display: none; }
+  .node-web { right: -25px; }
+  .node-mobile { left: -25px; }
+  .neural-hud-inspector { width: 96%; padding: 10px 14px; }
+}
+@media (max-width: 420px) {
+  .hero-neural-title { font-size: 1.7rem; }
+  .hero-neural-stage { width: 290px; height: 290px; }
+  .neural-core-inner { width: 72px; height: 72px; }
+  .neural-core-icon { width: 24px; height: 24px; }
 }
 
-@media (max-width: 640px) {
-  .hero-section {
-    padding: 25px 0 35px;
-  }
-  .hero-pure-container {
-    padding: 0 16px;
-  }
-  .hero-pure-title {
-    font-size: 1.85rem;
-  }
-  .hero-pure-cta-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  .hero-pure-right {
-    height: 350px;
-    transform: scale(0.85);
-  }
-  .hud-card-seo, .hud-card-social {
-    display: none;
-  }
-  .hud-card-perf {
-    top: 0;
-    right: 0;
-  }
-  .hud-card-analytics {
-    bottom: 15px;
-    right: 0;
-  }
-  .hero-hologram-cylinder {
-    left: 20%;
-    top: 10%;
-  }
-}
 
 /* ════════════════════════════════════════
    SECTIONS 2 TO 9 & FOOTER STYLES
@@ -2669,166 +2588,167 @@ h5 { font-weight: 800 !important; color: #8B5CF6 !important; }
 </nav>
 
 <!-- ══════════════════════════════════════
-     SECTION 1: PURE ANIMATED CYBER HERO (NO BANNER IMAGE)
+     SECTION 1: 3D NEURAL CORE & ORBITAL SERVICE CONSTELLATION
      ══════════════════════════════════════ -->
 <section class="hero-section" id="homeHero" aria-label="Hero Section">
-  <!-- Deep Space Ambient Glowing Orbs -->
-  <div class="hero-pure-backdrop" aria-hidden="true">
-    <div class="hero-glow-bubble b1"></div>
-    <div class="hero-glow-bubble b2"></div>
-    <div class="hero-glow-bubble b3"></div>
-  </div>
+  <!-- Interactive Neural Synapse Canvas -->
+  <canvas id="heroNeuralCanvas" aria-hidden="true"></canvas>
 
-  <!-- Full-Screen Canvas: Cyber City Skyline, Highway Speed Lights & Particles -->
-  <canvas id="heroFullCanvas" aria-hidden="true"></canvas>
+  <div class="hero-neural-container">
+    <!-- Left Column: Neural Branding, Kinetic Typography, Value Proposition & Dual CTAs -->
+    <div class="hero-neural-left">
+      <div class="hero-neural-badge">
+        <span class="hero-neural-dot"></span>
+        <span>Neural Engine V4.2 • Quantum Intelligence</span>
+      </div>
 
-  <div class="hero-pure-container">
-    <!-- Left Column: Exact Typography, Subtitle & Interactive Button -->
-    <div class="hero-pure-left">
-      <h1 class="hero-pure-title">
-        <span class="hero-brand-line">WebSpide Technologies -</span>
-        <span class="hero-accent-sky">Your One-Stop Solution for</span>
-        <span class="hero-gradient-text">Digital Marketing Services</span>
+      <h1 class="hero-neural-title">
+        <span class="nline-1">WebSpide Technologies -</span>
+        <span class="nline-2">Architecting Next-Gen</span>
+        <span class="hero-neural-kinetic">
+          <span class="hero-neural-prefix">Digital&nbsp;</span>
+          <span class="hero-neural-word" id="neuralKineticWord">Marketing Services</span>
+        </span>
       </h1>
 
-      <p class="hero-pure-desc">
-        WebSpide Technologies provides expert digital marketing services, including SEO services, social media marketing, digital advertising, branding, and online marketing solutions to help businesses enhance their online presence and achieve remarkable growth.
+      <p class="hero-neural-desc">
+        Harnessing predictive AI algorithms, bespoke high-velocity web &amp; mobile engineering, and mathematical search dominance to scale high-growth enterprises exponentially.
       </p>
 
-      <a href="#contact" class="hero-pure-cta-btn" aria-label="Get A Quote">
-        <span>Get A Quote</span>
-        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-      </a>
+      <div class="hero-neural-ctas">
+        <a href="#contact" class="hero-neural-cta-btn" aria-label="Initialize Growth">
+          <span>Initialize Growth</span>
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+        <a href="#services" class="hero-neural-sec-btn" aria-label="Explore Neural Ecosystem">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <span>Explore Ecosystem</span>
+        </a>
+      </div>
 
-      <!-- Bottom Status & 10s Timer -->
-      <div class="hero-pure-bottom-bar">
-        <div class="hero-pure-counter">
+      <!-- Quantum Telemetry Strip -->
+      <div class="hero-neural-telemetry">
+        <div class="hero-telem-chip">
+          <span class="hero-telem-val">99.8%</span>
+          <span class="hero-telem-lbl">Synaptic Precision</span>
         </div>
-        <div class="hero-pure-progress-track">
+        <div class="hero-telem-chip">
+          <span class="hero-telem-val">+340%</span>
+          <span class="hero-telem-lbl">Avg. Traffic Surge</span>
+        </div>
+        <div class="hero-telem-chip">
+          <span class="hero-telem-val">120+</span>
+          <span class="hero-telem-lbl">Global Deployments</span>
         </div>
       </div>
     </div>
 
-    <!-- Right Column: Interactive 3D Cyber HUD Stage with Holographic Cylinder & Glass Cards -->
-    <div class="hero-pure-right" id="heroPureStage">
-      <!-- SVG Gradients for Charts -->
-      <svg width="0" height="0" style="position:absolute;">
-        <defs>
-          <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#38bdf8" />
-            <stop offset="50%" stop-color="#8B5CF6" />
-            <stop offset="100%" stop-color="#C026B8" />
-          </linearGradient>
-        </defs>
-      </svg>
+    <!-- Right Column: 3D Neural Core & Orbital Service Constellation Stage -->
+    <div class="hero-neural-stage-wrap">
+      <div class="hero-neural-stage" id="neuralStage">
+        <!-- Concentric Orbital Gyro Rings -->
+        <div class="neural-orbit-ring ring-1"></div>
+        <div class="neural-orbit-ring ring-2"></div>
+        <div class="neural-orbit-ring ring-3"></div>
 
-      <!-- Center Holographic Cylinder Tower -->
-      <div class="hero-hologram-cylinder">
-        <div class="holo-beam-core"></div>
-        <div class="holo-orbit-ring r-top"></div>
-        <div class="holo-orbit-ring r-mid"></div>
-        <div class="holo-orbit-ring r-bot"></div>
-        <div class="holo-tower-words">
-          <span>STRATEGY</span>
-          <span>INNOVATION</span>
-          <span>GROWTH</span>
-        </div>
-      </div>
-
-      <!-- HUD Card 1: SEO Performance (Center Left) -->
-      <div class="hud-glass-card hud-card-seo">
-        <div class="hud-card-title">
-          <span>SEO PERFORMANCE</span>
-        </div>
-        <div class="hud-donut-wrap">
-          <svg viewBox="0 0 76 76">
-            <circle class="hud-donut-bg" cx="38" cy="38" r="30" />
-            <circle class="hud-donut-val" cx="38" cy="38" r="30" />
-          </svg>
-          <span class="hud-donut-text">92%</span>
-        </div>
-        <div class="hud-stat-caption">Organic Traffic</div>
-      </div>
-
-      <!-- HUD Card 2: Social Engagement (Center Left Lower) -->
-      <div class="hud-glass-card hud-card-social">
-        <div class="hud-card-title">
-          <span>SOCIAL ENGAGEMENT</span>
-        </div>
-        <div class="hud-social-metrics">
-          <div class="hud-social-col">
-            <svg class="hud-social-icon" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-            <span class="hud-social-num">12.5K</span>
-            <span class="hud-social-lbl">Followers</span>
-          </div>
-          <div class="hud-social-col">
-            <svg class="hud-social-icon" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            <span class="hud-social-num">8.7K</span>
-            <span class="hud-social-lbl">Likes</span>
-          </div>
-          <div class="hud-social-col">
-            <svg class="hud-social-icon" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
-            <span class="hud-social-num">3.2K</span>
-            <span class="hud-social-lbl">Shares</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- HUD Card 3: Performance Overview (Top Right) -->
-      <div class="hud-glass-card hud-card-perf">
-        <div class="hud-card-title">
-          <span>PERFORMANCE OVERVIEW</span>
-        </div>
-        <div class="hud-perf-top">
-          <div class="hud-mini-donut">
-            <svg viewBox="0 0 44 44">
-              <circle class="hud-donut-bg" cx="22" cy="22" r="17" />
-              <circle class="hud-donut-val" cx="22" cy="22" r="17" stroke-dashoffset="28" />
+        <!-- Central 3D Quantum Reactor Core -->
+        <div class="neural-core-center" id="neuralCoreCenter" title="Click to pulse neural core">
+          <canvas id="neuralCoreCanvas"></canvas>
+          <div class="neural-core-inner">
+            <svg class="neural-core-icon" viewBox="0 0 24 24">
+              <polygon points="12 2 2 8.5 2 15.5 12 22 22 15.5 22 8.5 12 2" fill="none" stroke="currentColor" stroke-width="1.8"/>
+              <line x1="12" y1="22" x2="12" y2="12" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="2" y1="8.5" x2="12" y2="12" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="22" y1="8.5" x2="12" y2="12" stroke="currentColor" stroke-width="1.5"/>
             </svg>
-            <span class="hud-mini-val">78%</span>
-          </div>
-          <div style="flex:1;">
-            <svg class="hud-perf-spark" viewBox="0 0 100 35">
-              <path class="hud-spark-line" d="M0,28 Q25,8 50,18 T100,5" />
-            </svg>
+            <span class="neural-core-tag">CORE AI</span>
           </div>
         </div>
-        <div class="hud-perf-foot">
-          <span>78% Growth</span>
-          <span class="hud-perf-growth">+24.6% This Month</span>
-        </div>
-      </div>
 
-      <!-- HUD Card 4: Campaign Analytics (Bottom Right) -->
-      <div class="hud-glass-card hud-card-analytics">
-        <div class="hud-card-title">
-          <span>CAMPAIGN ANALYTICS</span>
-        </div>
-        <div class="hud-analytics-body">
-          <div class="hud-equalizer-bars">
-            <div class="hud-eq-stick"></div>
-            <div class="hud-eq-stick"></div>
-            <div class="hud-eq-stick"></div>
-            <div class="hud-eq-stick"></div>
-            <div class="hud-eq-stick"></div>
-            <div class="hud-eq-stick"></div>
-          </div>
-          <div class="hud-right-donut-col">
-            <div class="hud-mini-donut">
-              <svg viewBox="0 0 44 44">
-                <circle class="hud-donut-bg" cx="22" cy="22" r="17" />
-                <circle class="hud-donut-val" cx="22" cy="22" r="17" stroke-dashoffset="40" />
-              </svg>
-              <span class="hud-mini-val">65%</span>
+        <!-- Orbital Node 1: AI-Powered SEO Dominance (Top) -->
+        <div class="constellation-node node-seo active" data-node="seo" data-name="Algorithmic SEO Engine" data-desc="AI-driven keyword surge &amp; SERP dominance" data-metric="99.2%" data-lbl="Organic Surge">
+          <div class="node-glass-pill">
+            <div class="node-icon-box seo">⚡</div>
+            <div class="node-info-col">
+              <span class="node-title">Algorithmic SEO</span>
+              <div class="node-stat-row">
+                <span class="node-stat-badge">#1 SERP</span>
+                <span class="node-stat-lbl">Dominance</span>
+              </div>
             </div>
-            <span class="hud-stat-caption">Engagement</span>
           </div>
         </div>
-      </div>
 
-      <!-- HUD Card 5: Data Insight Results Marquee -->
-      <div class="hud-card-marquee">
-        DATA. INSIGHT. RESULTS.
+        <!-- Orbital Node 2: Custom Web Engineering (Right) -->
+        <div class="constellation-node node-web" data-node="web" data-name="Ultra-Velocity Web Systems" data-desc="Sub-20ms edge-rendered full-stack architectures" data-metric="18ms" data-lbl="Edge Latency">
+          <div class="node-glass-pill">
+            <div class="node-icon-box web">🌐</div>
+            <div class="node-info-col">
+              <span class="node-title">Web &amp; Cloud Apps</span>
+              <div class="node-stat-row">
+                <span class="node-stat-badge">18ms</span>
+                <span class="node-stat-lbl">Ultra Speed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orbital Node 3: Viral Social Growth (Bottom-Right) -->
+        <div class="constellation-node node-social" data-node="social" data-name="Multi-Channel Social Scaler" data-desc="Hyper-targeted viral brand expansion &amp; engagement" data-metric="4.8x" data-lbl="Viral Lift">
+          <div class="node-glass-pill">
+            <div class="node-icon-box social">🚀</div>
+            <div class="node-info-col">
+              <span class="node-title">Social Reach</span>
+              <div class="node-stat-row">
+                <span class="node-stat-badge">4.8x</span>
+                <span class="node-stat-lbl">Engagement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orbital Node 4: Algorithmic Ads & PPC (Bottom-Left) -->
+        <div class="constellation-node node-ads" data-node="ads" data-name="Algorithmic ROAS Optimizer" data-desc="Intelligent predictive ad placement &amp; CPA reduction" data-metric="+520%" data-lbl="Target ROAS">
+          <div class="node-glass-pill">
+            <div class="node-icon-box ads">🎯</div>
+            <div class="node-info-col">
+              <span class="node-title">Paid Ads &amp; ROAS</span>
+              <div class="node-stat-row">
+                <span class="node-stat-badge">+520%</span>
+                <span class="node-stat-lbl">ROAS Surge</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orbital Node 5: Mobile App Suite (Top-Left) -->
+        <div class="constellation-node node-mobile" data-node="mobile" data-name="Bespoke Mobile Architecture" data-desc="High-performance iOS &amp; Android native ecosystems" data-metric="99.9%" data-lbl="Crash-Free">
+          <div class="node-glass-pill">
+            <div class="node-icon-box mobile">📱</div>
+            <div class="node-info-col">
+              <span class="node-title">Mobile Ecosystems</span>
+              <div class="node-stat-row">
+                <span class="node-stat-badge">4.9 ★</span>
+                <span class="node-stat-lbl">Top Rated</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Hologram Inspector Dock -->
+        <div class="neural-hud-inspector" id="neuralHudInspector">
+          <div class="hud-dock-left">
+            <div class="hud-beacon-pulse"></div>
+            <div>
+              <div class="hud-dock-name" id="hudActiveName">Algorithmic SEO Engine</div>
+              <div class="hud-dock-desc" id="hudActiveDesc">AI-driven keyword surge &amp; SERP dominance</div>
+            </div>
+          </div>
+          <div class="hud-dock-metric">
+            <div class="hud-metric-num" id="hudActiveMetric">99.2%</div>
+            <div class="hud-metric-lbl" id="hudActiveLbl">Organic Surge</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -6319,241 +6239,298 @@ h5 { font-weight: 800 !important; color: #8B5CF6 !important; }
   document.querySelectorAll('.mob-link,.mob-sub-link').forEach(function(el){el.addEventListener('click',closeMobile);});
 })();
 
-// 3. Pure Code Animated Cyber Engine (Skyline, Highway Light Streams & 3D Tilt)
-(function initPureCyberEngine() {
-  const canvas = document.getElementById('heroFullCanvas');
-  if (!canvas) return;
-
-  const ctx = canvas.getContext('2d');
-  let width, height;
+// 3. 3D Neural Core & Orbital Service Constellation Engine (HiDPI Mesh, Interactive Satellites & 3D Spring Parallax)
+(function initNeuralConstellationEngine() {
   const heroSection = document.getElementById('homeHero');
+  const bgCanvas = document.getElementById('heroNeuralCanvas');
+  const coreCanvas = document.getElementById('neuralCoreCanvas');
+  const stage = document.getElementById('neuralStage');
+  if (!heroSection) return;
 
-  function resizeCanvas() {
-    if (!heroSection) return;
-    width = canvas.width = heroSection.offsetWidth;
-    height = canvas.height = heroSection.offsetHeight;
+  // ── A. FULL-SCREEN NEURAL SYNAPSE NETWORK CANVAS (HiDPI + IntersectionObserver) ──
+  if (bgCanvas) {
+    const ctx = bgCanvas.getContext('2d', { alpha: true });
+    if (ctx) {
+      let width = 0;
+      let height = 0;
+      let dpr = Math.min(window.devicePixelRatio || 1, 2);
+      let isVisible = true;
+      let animId = null;
+      let mouseX = -9999;
+      let mouseY = -9999;
+
+      function resizeCanvas() {
+        if (!heroSection) return;
+        const rect = heroSection.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        bgCanvas.width = Math.floor(width * dpr);
+        bgCanvas.height = Math.floor(height * dpr);
+        bgCanvas.style.width = width + 'px';
+        bgCanvas.style.height = height + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resizeCanvas();
+
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resizeCanvas, 120);
+      });
+
+      // Neural Synaptic Particle Node
+      class SynapseNode {
+        constructor() {
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * (width || 1200);
+          this.y = Math.random() * (height || 800);
+          this.vx = (Math.random() - 0.5) * 0.4;
+          this.vy = (Math.random() - 0.5) * 0.4;
+          this.radius = Math.random() * 2.2 + 0.8;
+          const pType = Math.random();
+          this.color = pType > 0.6 ? '#38bdf8' : (pType > 0.3 ? '#a855f7' : '#ec4899');
+          this.alpha = Math.random() * 0.5 + 0.2;
+          this.pulsePhase = Math.random() * Math.PI * 2;
+        }
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.pulsePhase += 0.03;
+
+          // Mouse Gravitational Deflection
+          if (mouseX > 0 && mouseY > 0) {
+            const dx = this.x - mouseX;
+            const dy = this.y - mouseY;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 130 && dist > 0) {
+              const force = (130 - dist) / 130;
+              this.x += (dx / dist) * force * 1.8;
+              this.y += (dy / dist) * force * 1.8;
+            }
+          }
+
+          if (this.x < 0 || this.x > width) this.vx *= -1;
+          if (this.y < 0 || this.y > height) this.vy *= -1;
+        }
+        draw() {
+          const currentAlpha = this.alpha * (0.8 + 0.2 * Math.sin(this.pulsePhase));
+          ctx.save();
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = currentAlpha;
+          ctx.shadowColor = this.color;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+          ctx.restore();
+        }
+      }
+
+      const nodeCount = 42;
+      const nodes = Array.from({ length: nodeCount }, () => new SynapseNode());
+
+      function drawSynapticConnections() {
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              ctx.save();
+              const grad = ctx.createLinearGradient(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+              grad.addColorStop(0, nodes[i].color);
+              grad.addColorStop(1, nodes[j].color);
+              ctx.strokeStyle = grad;
+              ctx.globalAlpha = 0.16 * (1 - dist / 120);
+              ctx.lineWidth = 0.95;
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.stroke();
+              ctx.restore();
+            }
+          }
+        }
+      }
+
+      function renderScene() {
+        if (!isVisible) {
+          animId = null;
+          return;
+        }
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw Synaptic Web & Nodes
+        drawSynapticConnections();
+        nodes.forEach(n => { n.update(); n.draw(); });
+
+        animId = requestAnimationFrame(renderScene);
+      }
+
+      // IntersectionObserver for 0% CPU consumption off-screen
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            isVisible = entry.isIntersecting;
+            if (isVisible && !animId) {
+              animId = requestAnimationFrame(renderScene);
+            }
+          });
+        }, { threshold: 0.05 });
+        observer.observe(heroSection);
+      } else {
+        animId = requestAnimationFrame(renderScene);
+      }
+
+      heroSection.addEventListener('mousemove', (e) => {
+        const rect = heroSection.getBoundingClientRect();
+        mouseX = e.clientX - rect.left;
+        mouseY = e.clientY - rect.top;
+      });
+      heroSection.addEventListener('mouseleave', () => {
+        mouseX = -9999;
+        mouseY = -9999;
+      });
+    }
   }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
 
-  // 1. Generate Cyber Skyline Buildings
-  const buildings = [];
-  const buildingCount = 28;
-  for (let i = 0; i < buildingCount; i++) {
-    const bWidth = 35 + Math.random() * 55;
-    const bHeight = 120 + Math.random() * 260;
-    const bX = (i / buildingCount) * 1.2 * 1920 - 100;
-    buildings.push({
-      x: bX,
-      w: bWidth,
-      h: bHeight,
-      windows: Math.floor(Math.random() * 8) + 4,
-      lightColor: Math.random() > 0.5 ? 'rgba(56, 189, 248, 0.7)' : 'rgba(139, 92, 246, 0.7)',
-      antenna: Math.random() > 0.4
+  // ── B. CENTRAL 3D QUANTUM CORE PARTICLE CANVAS ──
+  if (coreCanvas) {
+    const cCtx = coreCanvas.getContext('2d');
+    if (cCtx) {
+      coreCanvas.width = 200;
+      coreCanvas.height = 200;
+      let angle = 0;
+
+      function renderCoreCanvas() {
+        cCtx.clearRect(0, 0, 200, 200);
+        const cx = 100;
+        const cy = 100;
+        angle += 0.02;
+
+        // Rotating Energy Ring Dots
+        const dotCount = 12;
+        for (let i = 0; i < dotCount; i++) {
+          const theta = angle + (i * Math.PI * 2) / dotCount;
+          const r = 58 + Math.sin(angle * 3 + i) * 6;
+          const x = cx + Math.cos(theta) * r;
+          const y = cy + Math.sin(theta) * (r * 0.55); // Tilted ellipse perspective
+
+          cCtx.save();
+          cCtx.beginPath();
+          cCtx.arc(x, y, 2.2, 0, Math.PI * 2);
+          cCtx.fillStyle = i % 2 === 0 ? '#38bdf8' : '#ec4899';
+          cCtx.shadowColor = '#38bdf8';
+          cCtx.shadowBlur = 10;
+          cCtx.fill();
+          cCtx.restore();
+        }
+
+        requestAnimationFrame(renderCoreCanvas);
+      }
+      renderCoreCanvas();
+    }
+  }
+
+  // ── C. KINETIC NEURAL WORD CYCLER ──
+  const kineticWord = document.getElementById('neuralKineticWord');
+  if (kineticWord) {
+    const words = [
+      "Marketing Services",
+      "Algorithmic SEO",
+      "Full-Stack Web Engines",
+      "Scalable Mobile Apps",
+      "Exponential ROI"
+    ];
+    let wordIndex = 0;
+    setInterval(() => {
+      kineticWord.classList.remove('fade-in');
+      kineticWord.classList.add('fade-out');
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        kineticWord.textContent = words[wordIndex];
+        kineticWord.classList.remove('fade-out');
+        kineticWord.classList.add('fade-in');
+      }, 280);
+    }, 2800);
+  }
+
+  // ── D. ORBITAL SATELLITE CONSTELLATION INTERACTIVITY & HUD INSPECTOR ──
+  const nodes = document.querySelectorAll('.constellation-node');
+  const hudName = document.getElementById('hudActiveName');
+  const hudDesc = document.getElementById('hudActiveDesc');
+  const hudMetric = document.getElementById('hudActiveMetric');
+  const hudLbl = document.getElementById('hudActiveLbl');
+  const coreCenter = document.getElementById('neuralCoreCenter');
+
+  function activateNode(nodeEl) {
+    nodes.forEach(n => n.classList.remove('active'));
+    nodeEl.classList.add('active');
+
+    const name = nodeEl.getAttribute('data-name');
+    const desc = nodeEl.getAttribute('data-desc');
+    const metric = nodeEl.getAttribute('data-metric');
+    const lbl = nodeEl.getAttribute('data-lbl');
+
+    if (hudName) hudName.textContent = name;
+    if (hudDesc) hudDesc.textContent = desc;
+    if (hudMetric) hudMetric.textContent = metric;
+    if (hudLbl) hudLbl.textContent = lbl;
+  }
+
+  nodes.forEach(nodeEl => {
+    nodeEl.addEventListener('mouseenter', () => activateNode(nodeEl));
+    nodeEl.addEventListener('click', () => activateNode(nodeEl));
+  });
+
+  if (coreCenter) {
+    coreCenter.addEventListener('click', () => {
+      // Rotate active node on core click
+      const activeIdx = Array.from(nodes).findIndex(n => n.classList.contains('active'));
+      const nextIdx = (activeIdx + 1) % nodes.length;
+      activateNode(nodes[nextIdx]);
     });
   }
 
-  // 2. Highway Light Photons
-  class HighwayLightPhoton {
-    constructor() {
-      this.reset();
-    }
+  // ── E. SPRING-LERPED 3D PARALLAX TILT ──
+  if (stage) {
+    let targetTiltX = 0;
+    let targetTiltY = 0;
+    let currentTiltX = 0;
+    let currentTiltY = 0;
 
-    reset() {
-      this.progress = Math.random() * 0.9;
-      this.speed = 0.004 + Math.random() * 0.007;
-      this.laneOffset = (Math.random() - 0.5) * 0.12;
-      this.color = Math.random() > 0.45 ? '#38bdf8' : (Math.random() > 0.5 ? '#8B5CF6' : '#C026B8');
-      this.tailLength = 0.05 + Math.random() * 0.07;
-      this.size = Math.random() * 2.8 + 1.2;
-    }
-
-    getPoint(t) {
-      // Perspective highway curving from bottom-center into middle plaza
-      const p0 = { x: 0.64 + this.laneOffset * 1.8, y: 1.05 };
-      const p1 = { x: 0.73 + this.laneOffset * 1.2, y: 0.78 };
-      const p2 = { x: 0.69 + this.laneOffset * 0.7, y: 0.62 };
-      const p3 = { x: 0.64 + this.laneOffset * 0.2, y: 0.46 };
-
-      const u = 1 - t;
-      const tt = t * t;
-      const uu = u * u;
-      const uuu = uu * u;
-      const ttt = tt * t;
-
-      const x = (uuu * p0.x + 3 * uu * t * p1.x + 3 * u * tt * p2.x + ttt * p3.x) * width;
-      const y = (uuu * p0.y + 3 * uu * t * p1.y + 3 * u * tt * p2.y + ttt * p3.y) * height;
-      return { x, y };
-    }
-
-    update() {
-      this.progress += this.speed;
-      if (this.progress >= 1.0) {
-        this.reset();
-        this.progress = 0;
-      }
-    }
-
-    draw() {
-      const head = this.getPoint(this.progress);
-      const tailProgress = Math.max(0, this.progress - this.tailLength);
-      const tail = this.getPoint(tailProgress);
-
-      ctx.save();
-      const grad = ctx.createLinearGradient(tail.x, tail.y, head.x, head.y);
-      grad.addColorStop(0, 'transparent');
-      grad.addColorStop(1, this.color);
-
-      ctx.strokeStyle = grad;
-      ctx.lineWidth = this.size * (1 - this.progress * 0.45);
-      ctx.lineCap = 'round';
-      ctx.shadowColor = this.color;
-      ctx.shadowBlur = 12;
-
-      ctx.beginPath();
-      ctx.moveTo(tail.x, tail.y);
-      ctx.lineTo(head.x, head.y);
-      ctx.stroke();
-
-      ctx.beginPath();
-      ctx.arc(head.x, head.y, this.size * 0.8, 0, Math.PI * 2);
-      ctx.fillStyle = '#ffffff';
-      ctx.shadowColor = this.color;
-      ctx.shadowBlur = 14;
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  // 3. Floating Digital Energy Particles
-  class DigitalParticle {
-    constructor() {
-      this.reset();
-    }
-
-    reset() {
-      this.x = Math.random() * width;
-      this.y = Math.random() * height;
-      this.size = Math.random() * 2 + 0.6;
-      this.speedY = -(Math.random() * 0.6 + 0.25);
-      this.speedX = (Math.random() - 0.5) * 0.35;
-      this.alpha = Math.random() * 0.65 + 0.2;
-      this.color = Math.random() > 0.5 ? '#38bdf8' : (Math.random() > 0.5 ? '#8B5CF6' : '#C026B8');
-    }
-
-    update() {
-      this.y += this.speedY;
-      this.x += this.speedX;
-      if (this.y < 0 || this.x < 0 || this.x > width) {
-        this.reset();
-        this.y = height;
-      }
-    }
-
-    draw() {
-      ctx.save();
-      ctx.beginPath();
-      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = this.color;
-      ctx.globalAlpha = this.alpha;
-      ctx.shadowColor = this.color;
-      ctx.shadowBlur = 10;
-      ctx.fill();
-      ctx.restore();
-    }
-  }
-
-  const photons = Array.from({ length: 32 }, () => new HighwayLightPhoton());
-  const particles = Array.from({ length: 50 }, () => new DigitalParticle());
-
-  function renderPureCyberScene() {
-    ctx.clearRect(0, 0, width, height);
-
-    // A. Draw Perspective Cyber City Skyline Silhouettes
-    const scaleFactor = width / 1920;
-    buildings.forEach(b => {
-      const bx = b.x * scaleFactor;
-      const bw = b.w * scaleFactor;
-      const bh = b.h * scaleFactor;
-      const by = height - bh - 80 * scaleFactor;
-
-      ctx.save();
-      // Building silhouette
-      ctx.fillStyle = 'rgba(7, 22, 79, 0.45)';
-      ctx.fillRect(bx, by, bw, bh);
-
-      // Building neon top edge
-      ctx.strokeStyle = b.lightColor;
-      ctx.lineWidth = 1;
-      ctx.shadowColor = b.lightColor;
-      ctx.shadowBlur = 8;
-      ctx.beginPath();
-      ctx.moveTo(bx, by);
-      ctx.lineTo(bx + bw, by);
-      ctx.stroke();
-
-      // Antenna beacon
-      if (b.antenna) {
-        ctx.beginPath();
-        ctx.moveTo(bx + bw / 2, by);
-        ctx.lineTo(bx + bw / 2, by - 25 * scaleFactor);
-        ctx.stroke();
-        ctx.fillStyle = '#ffffff';
-        ctx.beginPath();
-        ctx.arc(bx + bw / 2, by - 25 * scaleFactor, 1.8, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      ctx.restore();
-    });
-
-    // B. Draw Curved Highway Road Lanes
-    ctx.save();
-    ctx.lineWidth = 2;
-    ctx.shadowBlur = 10;
-
-    // Cyan lane line
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.35)';
-    ctx.shadowColor = '#38bdf8';
-    ctx.beginPath();
-    ctx.moveTo(width * 0.6, height);
-    ctx.bezierCurveTo(width * 0.72, height * 0.78, width * 0.68, height * 0.62, width * 0.64, height * 0.46);
-    ctx.stroke();
-
-    // Magenta lane line
-    ctx.strokeStyle = 'rgba(192, 38, 184, 0.45)';
-    ctx.shadowColor = '#C026B8';
-    ctx.beginPath();
-    ctx.moveTo(width * 0.68, height);
-    ctx.bezierCurveTo(width * 0.76, height * 0.78, width * 0.71, height * 0.62, width * 0.65, height * 0.46);
-    ctx.stroke();
-    ctx.restore();
-
-    // C. Draw Particles & Photons
-    particles.forEach(p => { p.update(); p.draw(); });
-    photons.forEach(p => { p.update(); p.draw(); });
-
-    requestAnimationFrame(renderPureCyberScene);
-  }
-  renderPureCyberScene();
-
-  // 4. Interactive 3D Parallax Tilt
-  const stage = document.getElementById('heroPureStage');
-  if (stage && window.innerWidth > 992) {
     heroSection.addEventListener('mousemove', (e) => {
+      if (window.innerWidth <= 992) return;
       const rect = heroSection.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
       const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-      stage.style.transform = `perspective(1000px) rotateX(${-y * 12}deg) rotateY(${x * 12}deg)`;
-      stage.style.transition = 'transform 0.1s ease-out';
+      targetTiltX = -y * 12;
+      targetTiltY = x * 12;
     });
 
     heroSection.addEventListener('mouseleave', () => {
-      stage.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)';
-      stage.style.transition = 'transform 0.6s ease';
+      targetTiltX = 0;
+      targetTiltY = 0;
     });
+
+    function updateTilt() {
+      if (window.innerWidth > 992) {
+        currentTiltX += (targetTiltX - currentTiltX) * 0.08;
+        currentTiltY += (targetTiltY - currentTiltY) * 0.08;
+        stage.style.transform = `perspective(1200px) rotateX(${currentTiltX.toFixed(2)}deg) rotateY(${currentTiltY.toFixed(2)}deg)`;
+      } else {
+        stage.style.transform = 'none';
+      }
+      requestAnimationFrame(updateTilt);
+    }
+    updateTilt();
   }
 })();
+
 
 // 4. Proven Results / Achievements Scroll Count-Up Animation
 const achieveNumberEls = document.querySelectorAll('.achieve-number');
